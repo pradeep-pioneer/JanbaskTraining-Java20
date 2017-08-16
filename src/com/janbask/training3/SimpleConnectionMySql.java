@@ -4,7 +4,8 @@ import java.text.SimpleDateFormat;
 
 public class SimpleConnectionMySql {
     public static void main(String[] args) {
-        String url = "jdbc:mysql://sv01:3306/test", userName = "veridic", password = "veridic";
+        String server = "sv01", port = "3306", driverType = "mysql", userName = "veridic", password = "veridic", database = "test";
+        String url =String.format("jdbc:%s://%s:%s/%s", driverType,server, port,database);
         try {
             makeConnection(url, userName, password);
         }
