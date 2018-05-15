@@ -4,7 +4,8 @@ import java.text.SimpleDateFormat;
 
 public class SimpleConnectionMySql {
     public static void main(String[] args) {
-        String server = "sv01", port = "3306", driverType = "mysql", userName = "veridic", password = "veridic", database = "test";
+    		
+        String server = "127.0.0.1", port = "3306", driverType = "mysql", userName = "pradeep", password = "pradeep-pw", database = "test";
         String url =String.format("jdbc:%s://%s:%s/%s", driverType,server, port,database);
         try {
             makeConnection(url, userName, password);
@@ -22,7 +23,7 @@ public class SimpleConnectionMySql {
         SimpleDateFormat format = new SimpleDateFormat("dd-MMM-yyyy");
         ResultSet rs = stmt.executeQuery("select * from table_student");
         while (rs.next()) {
-            System.out.printf("\nStudent Id: %s\tFirst Name: %s\tLast Name: %s\tDate Of Birth: %s",
+            System.out.printf("\nStudent Id: %s \tFirst Name: %s \tLast Name: %s \tDate Of Birth: %s",
                     rs.getInt(1),
                     rs.getString(2),
                     rs.getString(3),
